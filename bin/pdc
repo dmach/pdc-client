@@ -6,8 +6,14 @@
 # http://opensource.org/licenses/MIT
 #
 
+import os
 import sys
 import logging
+
+here = sys.path[0]
+if here != '/usr/bin':
+    # Git checkout
+    sys.path.insert(1, os.path.dirname(here))
 
 from pdc_client.runner import Runner
 
