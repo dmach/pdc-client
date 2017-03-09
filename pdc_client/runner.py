@@ -63,6 +63,7 @@ DEFAULT_PLUGINS = [
     'product.py',
     'product_version.py',
     'release.py',
+    'release_variant.py',
     'repo.py',
     'rpm.py'
 ]
