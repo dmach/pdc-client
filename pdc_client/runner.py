@@ -49,6 +49,7 @@ else:
     PLUGIN_DIRS = [INSTALLED_DIR]
 
 DEFAULT_PLUGINS = [
+    'base_product.py',
     'build_image_rtt_tests.py',
     'build_images.py',
     'component.py',
