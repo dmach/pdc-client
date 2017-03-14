@@ -7,9 +7,6 @@
 
 from __future__ import print_function
 
-
-import json
-
 from pdc_client.plugin_helpers import PDCClientPlugin
 
 
@@ -24,8 +21,9 @@ class PermissionPlugin(PDCClientPlugin):
 
     def permission_list(self, args):
         permissions = self.__get_permissions(self.client.auth['current-user'])
+
         if args.json:
-            print(json.dumps(permissions))
+            print(self.to_json(permissions))
             return
 
         for permission in sorted(permissions):

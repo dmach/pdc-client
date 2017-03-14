@@ -7,7 +7,6 @@
 
 from __future__ import print_function
 
-import json
 from collections import OrderedDict
 
 from pdc_client.plugin_helpers import (PDCClientPlugin,
@@ -86,8 +85,9 @@ class ProductPlugin(PDCClientPlugin):
             filters['active'] = True
 
         products = self.client.get_paged(self.client.products._, **filters)
+
         if args.json:
-            print(json.dumps(list(products)))
+            print(self.to_json(list(products)))
             return
 
         fmt = '{0:25} {1:35} {2}'
